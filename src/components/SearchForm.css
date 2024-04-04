@@ -1,0 +1,7 @@
+.searchbar {
+    background-color: rgba(30, 30, 41, 1);
+    height: 50px; /* İstediğiniz yükseklik değeri */
+    width: 100vh; /* Genişlik değerini 100% olarak ayarlayın */
+    max-width: 800px; /* Search bar'ın maksimum genişliği */
+    margin: 10px auto; /* Sağ ve sol kenar boşluklarını otomatik olarak ayarlayın */
+  }

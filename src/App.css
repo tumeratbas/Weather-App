@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
+  background-image: url('Background.png');
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+}
+
+.app-header {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25vh;
+  color: #fff; /* Örnek metin rengi */
+}
+
+.logo-container {
+  flex: 1; /* Logo ile menü arasında esneklik sağlamak için */
+}
+
+.app-logo {
+  width: 200px; /* İstediğiniz logo boyutları */
+  height: auto;
+  align-items: center;
+}
+
+.bold-text{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  align-items: center;
+}
+
+.white-part{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.blue-part{
+  color: rgba(143, 178, 245, 1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.regular-text{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color:grey
 }
+/* Diğer stiller buraya eklenebilir */

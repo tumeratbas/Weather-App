@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import logo from './logo.png';
+import logo from './logo.png'; // veya logo.svg
+import { getWeatherData } from './components/api';
+import Weather from './components/Weather';
+import SearchForm from './components/SearchForm';
+import './App.css'; // Stil dosyanızı import edin
 
 function App() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
 
-  const API_KEY = '98ff9f5c9f967f4dd958a95da4f8d469'; // OpenWeatherMap API key
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (city) => {
     try {
-      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
-      setWeather(response.data);
+      const data = await getWeatherData(city);
+      setWeather(data);
       setError(null);
     } catch (err) {
       setError('Şehir bulunamadı. Lütfen geçerli bir şehir adı girin.');
@@ -22,22 +22,24 @@ function App() {
   };
 
   return (
-    <div>
-      <img src={logo} alt="Logo" /> {/* Logo burada */}
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Şehir adı girin" value={city} onChange={(e) => setCity(e.target.value)} />
-        <button type="submit">Ara</button>
-      </form>
-      {error && <p>{error}</p>}
-      {weather && (
-        <div>
-          <h2>{weather.name} Hava Durumu</h2>
-          <p>Sıcaklık: {weather.main.temp}°C</p>
-          <p>Nem: {weather.main.humidity}%</p>
-          <p>Rüzgar Hızı: {weather.wind.speed} m/s</p>
-          <p>Hava Durumu: {weather.weather[0].description}</p>
+    <div className="app-container">
+      <header className="app-header">
+        <div className="logo-container">
+          <img src={logo} alt="Logo" className="app-logo" />
         </div>
-      )}
+      </header>
+      <div className='bold-text'>
+        <h2>
+          <span class="white-part">Welcome to</span>
+          <span class="blue-part"> TypeWeather</span>
+        </h2>
+      <div className='regular-text'>
+        <p>Choose a location to see the weather forecast</p>
+      </div>
+      </div>
+      <SearchForm onSubmit={handleSubmit} />
+      {error && <p>{error}</p>}
+      {weather && <Weather weather={weather} />}
     </div>
   );
 }
