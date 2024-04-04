@@ -1,4 +1,5 @@
 .main-picture{
+    margin-top: 10px;
     padding: 10px;
     color:rgba(191, 191, 212, 1);
     height: 250px;
@@ -6,6 +7,18 @@
     background-image: url('./image.jpg');
     border-radius: 12px;
     font-size: large;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.boxes{
+    align-items: center;
+    justify-content: center;
+    display:flexbox;
+    margin: 0 auto;
+
 }
 
 .country{
@@ -31,12 +44,14 @@
 
 .results{
     margin-top: 10px;
+    margin-right: 10px;
     padding: 10px;
     color:rgba(191, 191, 212, 1);
     height: 250px;
     width: 350px;
     background-color: rgba(22, 22, 31, 1);
     border-radius: 12px;
+    float: left
 }
 
 hr{
@@ -64,4 +79,5 @@ hr.day{
     width: 350px;
     background-color: rgba(22, 22, 31, 1);
     border-radius: 12px;
+    float: left
 }
