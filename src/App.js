@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import logo from './logo.png'; // veya logo.svg
+import logo from './logo.png';
 import { getWeatherData } from './components/api';
 import Weather from './components/Weather';
 import SearchForm from './components/SearchForm';
-import './App.css'; // Stil dosyanızı import edin
+import './App.css';
 
 function App() {
   const [city, setCity] = useState('');
