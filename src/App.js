@@ -16,7 +16,7 @@ function App() {
       setWeather(data);
       setError(null);
     } catch (err) {
-      setError('Şehir bulunamadı. Lütfen geçerli bir şehir adı girin.');
+      setError('City not found. Please enter a valid city name.');
       setWeather(null);
     }
   };
@@ -38,7 +38,7 @@ function App() {
       </div>
       </div>
       <SearchForm onSubmit={handleSubmit} />
-      {error && <p>{error}</p>}
+      {error && <p style={{color:'whitesmoke'}}>{error}</p>}
       {weather && <Weather weather={weather} />}
     </div>
   );
